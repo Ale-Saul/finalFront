@@ -63,9 +63,11 @@ export class EditarPlaylistComponent {
         .subscribe(
           () => {
             console.log('Nombre de la playlist actualizado con éxito');
+            alert('Nombre de la playlist actualizado con éxito');
           },
           (error) => {
             console.log('Error al actualizar el nombre de la playlist:', error);
+            alert('Error al actualizar el nombre de la playlist');
           }
         );
     }

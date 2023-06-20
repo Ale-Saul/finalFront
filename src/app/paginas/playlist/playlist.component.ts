@@ -54,4 +54,23 @@ export class PlaylistComponent {
       alert('Ingrese un nombre para la playlist');
     }
   }
+  mostrarBotones(){
+    document.getElementById("eliminar")?.classList.remove("hide");
+    document.getElementById("editar")?.classList.remove("hide");
+  }
+  eliminar(){
+    const id = this.playlistService.playlistSeleccionada?.getValue()?.id;
+    if (id != undefined)
+    {
+      this.playlistService.eliminarPlaylist(id).subscribe(
+        (response: any) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+      window.location.reload();
+    }
+  }
 }

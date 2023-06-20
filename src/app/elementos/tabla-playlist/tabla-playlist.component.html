@@ -7,10 +7,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let playlist of playlists" [routerLink]="['/editarplaylist']" (click)="seleccionarPlaylist(playlist)">
-        <td>{{ playlist.nombre }}</td>
-        <td>
-          <ul>
+      <!-- <tr *ngFor="let playlist of playlists" [routerLink]="['/editarplaylist']" (click)="seleccionarPlaylist(playlist, $event.target)"> -->
+      <tr *ngFor="let playlist of playlists" (click)="seleccionarPlaylist(playlist, $event.target)">
+        <td [ngClass]="{'selected': playlist === playlistSeleccionada}">{{ playlist.nombre }}</td>
+        <td [ngClass]="{'selected': playlist === playlistSeleccionada}">
+          <ul id="prioridad">
             <li *ngFor="let cancion of playlist.canciones">
               {{ cancion.titulo }} - {{ cancion.artista }}
             </li>

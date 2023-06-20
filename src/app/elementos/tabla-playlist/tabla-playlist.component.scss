@@ -35,7 +35,15 @@ td:nth-child(2) {
   display: block;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 60vh;
   width: 80vw;
   overflow: auto;
+}
+.selected {
+  color:black;
+  background-color: #B7B4B4;
+}
+#prioridad{
+  color:white;
+  background-color: transparent;
 }

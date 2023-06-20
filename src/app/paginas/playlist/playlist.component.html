@@ -10,7 +10,11 @@
       <button class="ag-button" (click)="crear()"><i class="fa-sharp fa-solid fa-check fa-2xl"></i></button>
     </div>
     <div class="container2">
-      <app-tabla-playlist [playlists]="datosRecuperados"></app-tabla-playlist>
+      <app-tabla-playlist [playlists]="datosRecuperados" (seleccionPlaylist)="mostrarBotones()"></app-tabla-playlist>
+    </div>
+    <div class="container4">
+      <button id="editar" class="hide editar" [routerLink]="['/editarplaylist']"><i class="fa-sharp fa-solid fa-edit fa-xl"></i>Editar</button>
+      <button id="eliminar" class="hide eliminar" (click)="eliminar()"><i class="fa-sharp fa-solid fa-trash fa-xl"></i>Eliminar</button>
     </div>
   </div>
 </div>

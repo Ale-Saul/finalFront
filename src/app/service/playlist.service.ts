@@ -16,6 +16,9 @@ export class PlaylistService {
   crearPlaylist(playlist : any){
     return this.http.post('http://localhost:3000/playlist', playlist);
   }
+  eliminarPlaylist(id: any){
+    return this.http.delete(`http://localhost:3000/playlist/${id}`);
+  }
   agregarCancion(id: string, cancion : any){
     return this.http.post(`http://localhost:3000/playlist/cancion/${id}`, cancion);
   }
