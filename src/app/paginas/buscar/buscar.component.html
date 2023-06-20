@@ -1,0 +1,20 @@
+<div class="container">
+  <div>
+    <i (click)="toggleMenu()" class="fa-sharp fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+    <app-menu-lateral></app-menu-lateral>
+  </div>
+  <div>
+    <div class="search-container">
+      <input type="text" placeholder="Buscar..." class="search-input" [(ngModel)]="titulo">
+      <button class="search-button" (click)="buscar()"><i class="fa-sharp fa-solid fa-magnifying-glass fa-lg"></i></button>
+    </div>
+    <div class="scroll-container">
+      <div class="block">
+        <h1>Resultados</h1>
+        <app-tabla-canciones [canciones]="resultados"></app-tabla-canciones>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,28 @@
+<div>
+  <i (click)="toggleMenu()" class="fa-sharp fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+</div>
+<div>
+  <app-menu-lateral></app-menu-lateral>
+  <div class="scroll-container">
+    <div class="block">
+      <div class="block">
+        <h1>Pop</h1>
+        <app-tabla-canciones [canciones]="datosRecuperadosPop"></app-tabla-canciones>
+      </div>
+      <div class="block">
+        <h1>Cumbia</h1>
+        <app-tabla-canciones [canciones]="datosRecuperadosCumbia"></app-tabla-canciones>
+      </div>
+      <div class="block">
+        <h1>Rock</h1>
+        <app-tabla-canciones [canciones]="datosRecuperadosRock"></app-tabla-canciones>
+      </div>
+      <div class="block">
+        <h1>Regueton</h1>
+        <app-tabla-canciones [canciones]="datosRecuperadosRegueton"></app-tabla-canciones>
+      </div>
+    </div>
+  </div>
+</div>
+
+

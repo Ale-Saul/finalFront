@@ -1,0 +1,12 @@
+<div class="card-container">
+
+  <div class="card" *ngFor = "let cancion of canciones.slice(0, cartasLimit)" [routerLink]="['/editarcancion']" (click)="seleccionarCancion(cancion)">
+    <div class="card-content">
+      <div class="flex"><h1>Titulo: </h1> <td>{{ cancion.titulo}}</td></div>
+      <div class="flex"><h1>Artista: </h1><td>{{ cancion.artista }}</td></div>
+      <!-- <div class="flex"><h1>Genero: </h1><td>{{ cancion.genero }}</td></div> -->
+      <div class="flex"><h1>Duracion: </h1><td>{{ cancion.duracion }}</td></div>
+    </div>
+  </div>
+
+</div>

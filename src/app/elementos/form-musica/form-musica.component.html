@@ -1,0 +1,29 @@
+<div class="container">
+  <form #formulario="ngForm" (ngSubmit)="submitFormulario(formulario)">
+    <h1>Agregar Cancion</h1>
+    <div>
+      <label for="song-title">Título:</label>
+      <input type="text" id="song-title" name="songTitle" ngModel required>
+    </div>
+
+    <div>
+      <label for="artist">Artista:</label>
+      <input type="text" id="artist" name="artist" ngModel required>
+    </div>
+
+    <div>
+      <label for="genre">Género:</label>
+      <input type="text" id="genre" name="genre" ngModel>
+    </div>
+
+    <div>
+      <label for="duration">Duración (en segundos):</label>
+      <input type="number" id="duration" name="duration" ngModel required>
+    </div>
+
+    <div class="container-button">
+    <button type="submit">Agregar &nbsp; <i class="fa-sharp fa-regular fa-square-check fa-xl" style="color: #ffffff;"></i></button>
+    <button class="regresar" [routerLink]="['/inicio']">Cancelar &nbsp; <i class="fa-sharp fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i></button>
+    </div>
+  </form>
+</div>

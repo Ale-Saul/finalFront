@@ -1,0 +1,24 @@
+<div class="divRegresar">
+  <button class="regresar" [routerLink]="['/inicio']">Regresar</button>
+</div>
+<div class="form">
+    <h1>Editar Cancion</h1>
+    <div  *ngIf="cancionSeleccionada">
+        <label>Titulo:</label>
+        <input type="text" [(ngModel)]="cancionSeleccionada.titulo">
+
+        <label>Artista:</label>
+        <input type="text" [(ngModel)]="cancionSeleccionada.artista">
+
+        <label>Género:</label>
+        <input type="text" [(ngModel)]="cancionSeleccionada.genero">
+
+        <label>Duración (en segundos):</label>
+        <input type="number" [(ngModel)]="cancionSeleccionada.duracion">
+
+      <div class="container-button">
+        <button class="guardar" (click)="guardarCambios()">Guardar cambios</button>
+        <button class="regresar" (click)="eliminarCancion()" [routerLink]="['/inicio']">Eliminar canción</button>
+      </div>
+    </div>
+</div>

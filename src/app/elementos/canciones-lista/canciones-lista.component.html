@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Artista</th>
+      <th>Duración</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cancion of canciones" (click)="seleccionarCancion(cancion, $event.target)">
+      <td [ngClass]="{'selected': cancion === cancionSeleccionada}">{{ cancion.titulo }}</td>
+      <td [ngClass]="{'selected': cancion === cancionSeleccionada}">{{ cancion.artista }}</td>
+      <td [ngClass]="{'selected': cancion === cancionSeleccionada}">{{ cancion.duracion }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button type="submit" *ngIf="cancionSeleccionada" (click)="agregarCancion()">Agregar</button>

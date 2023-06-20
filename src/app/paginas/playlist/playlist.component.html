@@ -1,0 +1,16 @@
+<div>
+  <i (click)="toggleMenu()" class="fa-sharp fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+</div>
+<div>
+  <app-menu-lateral></app-menu-lateral>
+  <div class="scroll-container">
+    <div class="container1">
+      <label for="playlist-title">Nombre Playlist: </label>
+      <input #myInput type="text" id="playlist-title" name="playlistTitle" required>
+      <button class="ag-button" (click)="crear()"><i class="fa-sharp fa-solid fa-check fa-2xl"></i></button>
+    </div>
+    <div class="container2">
+      <app-tabla-playlist [playlists]="datosRecuperados"></app-tabla-playlist>
+    </div>
+  </div>
+</div>

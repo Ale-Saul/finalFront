@@ -1,0 +1,22 @@
+<div class="table-container ">
+<table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Canciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let playlist of playlists" [routerLink]="['/editarplaylist']" (click)="seleccionarPlaylist(playlist)">
+        <td>{{ playlist.nombre }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let cancion of playlist.canciones">
+              {{ cancion.titulo }} - {{ cancion.artista }}
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

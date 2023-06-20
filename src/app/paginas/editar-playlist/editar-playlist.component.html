@@ -1,0 +1,32 @@
+<div class="container4">
+  <i (click)="toggleMenu()" class="fa-sharp fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+  <button class="regresar"><a [routerLink]="['/playlist']">Regresar</a></button>
+</div>
+<div>
+  <app-menu-lateral></app-menu-lateral>
+
+  <div class="scroll-container">
+    <div class="container1" *ngIf="playlistSeleccionada">
+      <label for="playlist-title">Nombre Playlist: </label>
+      <input #myInput type="text" [(ngModel)]="playlistSeleccionada.nombre" required>
+      <button class="ag-button" (click)="guardarCambios()"><i class="fa-sharp fa-solid fa-check fa-2xl"></i></button>
+    </div>
+
+    <div class="container3">
+      <label for="canciones-title">Canciones Playlist:</label>
+      <app-canciones-playlist [canciones]="playlistSeleccionada?.canciones" (eventoCancion)="actualizarListaCancionesEliminar($event)"></app-canciones-playlist>
+    </div>
+
+    <div class="search-container">
+      <input type="text" placeholder="Buscar..." class="search-input" [(ngModel)]="titulo">
+      <button class="search-button" (click)="buscar()"><i class="fa-sharp fa-solid fa-magnifying-glass fa-lg"></i></button>
+    </div>
+
+    <div class="container3">
+      <div class="block">
+        <app-canciones-lista [canciones]="resultados" (eventoCancion)="actualizarListaCanciones($event)"></app-canciones-lista>
+      </div>
+    </div>
+
+  </div>
+</div>
