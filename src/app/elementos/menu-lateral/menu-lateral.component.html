@@ -4,6 +4,6 @@
     <a [routerLink]="['/buscar']"><li><i class="fa-sharp fa-solid fa-magnifying-glass fa-lg"></i>&nbsp;&nbsp;&nbsp; Buscar</li></a>
     <a [routerLink]="['/musica']"><li><i class="fa-sharp fa-solid fa-music fa-xl"></i>&nbsp;&nbsp;&nbsp; Cancion</li></a>
     <a [routerLink]="['/playlist']"><li><i class="fa-sharp fa-solid fa-square-plus fa-lg"></i>&nbsp;&nbsp;&nbsp; Playlist</li></a>
-    <a [routerLink]="['/']"><li><i class="fa-sharp fa-solid fa-door-open fa-lg"></i>&nbsp;&nbsp;&nbsp; Cerrar Sesion</li></a>
+    <a [routerLink]="['/login']" (click)="cerrarSesion()"><li><i class="fa-sharp fa-solid fa-door-open fa-lg"></i>&nbsp;&nbsp;&nbsp; Cerrar Sesion</li></a>
   </ul>
 </div>

@@ -7,6 +7,7 @@ import { PlaylistComponent } from './paginas/playlist/playlist.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
 import { FormEditMusicaComponent } from './elementos/form-edit-musica/form-edit-musica.component';
 import { EditarPlaylistComponent } from './paginas/editar-playlist/editar-playlist.component';
+import { LoginComponent } from './paginas/login/login.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'playlist', component: PlaylistComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'editarcancion', component: FormEditMusicaComponent},
-  {path: 'editarplaylist', component: EditarPlaylistComponent}
+  {path: 'editarplaylist', component: EditarPlaylistComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

@@ -20,6 +20,7 @@ import { TablaPlaylistComponent } from './elementos/tabla-playlist/tabla-playlis
 import { EditarPlaylistComponent } from './paginas/editar-playlist/editar-playlist.component';
 import { CancionesListaComponent } from './elementos/canciones-lista/canciones-lista.component';
 import { CancionesPlaylistComponent } from './elementos/canciones-playlist/canciones-playlist.component';
+import { LoginComponent } from './paginas/login/login.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CancionesPlaylistComponent } from './elementos/canciones-playlist/canci
     TablaPlaylistComponent,
     EditarPlaylistComponent,
     CancionesListaComponent,
-    CancionesPlaylistComponent
+    CancionesPlaylistComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

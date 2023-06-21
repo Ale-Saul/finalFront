@@ -15,6 +15,9 @@ export class MenuLateralComponent implements OnInit {
       this.menuAbierto = menuAbierto;
     });
   }
+  cerrarSesion() {
+    localStorage.clear();
+  }
   toggleMenu() {
     this.menuService.toggleMenu();
   }
