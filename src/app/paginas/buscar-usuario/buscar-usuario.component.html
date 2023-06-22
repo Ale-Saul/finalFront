@@ -11,14 +11,11 @@
     <div class="scroll-container">
       <div class="block">
         <h1>Resultados</h1>
-        <app-canciones-busqueda [canciones]="resultados" (eventoCancion)="mostrarBotones()"></app-canciones-busqueda>
+        <app-usuario-lista [usuarios]="resultados" (eventoCancion)="mostrarBotones()"></app-usuario-lista>
       </div>
       <div class="container4">
-        <button id="ver" class="hide editar" [routerLink]="['/mostrarCancion']">Ver</button>
-        <button *ngIf="esAdmin()" id="editar" class="hide editar" [routerLink]="['/editarcancion']">Editar</button>
+        <button id="ver" class="hide editar" [routerLink]="['/perfil']">Editar</button>
       </div>
     </div>
   </div>
 </div>
-
-

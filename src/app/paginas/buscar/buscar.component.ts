@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuService } from '../../service/menu.service';
 import { BuscadorService } from 'src/app/service/buscador.service';
+import { AuthGuard } from 'src/app/auth.guard';
 
 @Component({
   selector: 'app-buscar',
@@ -11,7 +12,7 @@ export class BuscarComponent {
 
   titulo : string = '';
   resultados : any = [];
-  constructor(private menuService: MenuService, private buscadorService: BuscadorService) { }
+  constructor(private menuService: MenuService, private buscadorService: BuscadorService, private authGuard : AuthGuard) { }
   buscar(){
     this.buscadorService.buscarCanciones(this.titulo).subscribe(
       (data) => {
@@ -29,5 +30,15 @@ export class BuscarComponent {
   }
   toggleMenu() {
     this.menuService.toggleMenu();
+  }
+
+  esAdmin(){
+    if(this.authGuard.esAdmin()){
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
 }

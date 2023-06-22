@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuService } from '../../service/menu.service';
+import { AuthGuard } from 'src/app/auth.guard';
 @Component({
   selector: 'app-agregar-musica',
   templateUrl: './agregar-musica.component.html',

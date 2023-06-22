@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios" (click)="seleccionarCancion(usuario, $event.target)">
+      <td [ngClass]="{'selected': usuario === usuarioSeleccionado}">{{ usuario.nombre }}</td>
+      <td [ngClass]="{'selected': usuario === usuarioSeleccionado}">{{ usuario.correo }}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- <div class="container4">
+  <button type="submit" *ngIf="cancionSeleccionada" (click)="agregarCancion()">Agregar</button>
+  <button id="ver" *ngIf="cancionSeleccionada" class="editar" [routerLink]="['/mostrarCancion']">Ver</button>
+</div> -->

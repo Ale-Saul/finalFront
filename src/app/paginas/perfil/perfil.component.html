@@ -1,0 +1,29 @@
+<div class="container-regresar">
+  <button class="regresar" (click)="regresar()"> Regresar</button>
+</div>
+
+<div class="container">
+  <form>
+    <h1>Perfil</h1>
+    <div>
+      <label for="username">Nombre de usuario:</label>
+      <input type="text" name="nombre" [(ngModel)]="user.nombre">
+    </div>
+
+    <div>
+      <label for="email">Correo electrónico:</label>
+      <span>{{user.correo}}</span>
+    </div>
+    <div *ngIf="esAdmin()">
+      <label for="rol">Rol:</label>
+      <select name="rol" [(ngModel)]="user.rol">
+        <option value=0>Usuario Regular</option>
+        <option value=1>Administrador</option>
+      </select>
+    </div>
+    <div class="container-button">
+      <button class="editar" (click)="guardarCambios()">Guardar Cambios</button>
+      <button class="eliminar" (click)="eliminarCuenta()">Eliminar Cuenta</button>
+     </div>
+  </form>
+</div>
