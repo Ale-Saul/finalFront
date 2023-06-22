@@ -18,7 +18,9 @@ export class PlaylistComponent {
   ) { }
 
   ngOnInit(): void {
-    this.playlistService.obtenerPlaylist().subscribe(
+    const user = localStorage.getItem('usuario');
+    const { id } = JSON.parse(user || '{}');
+    this.playlistService.obtenerPlaylistUsuario(id).subscribe(
       (response: any) => {
         this.datosRecuperados = response;
       },
@@ -34,13 +36,15 @@ export class PlaylistComponent {
   }
   crear(){
     const nombre =  this.myInput.nativeElement.value;
+    const user = localStorage.getItem('usuario');
+    const { id } = JSON.parse(user || '{}');
     const playlist = {
       "nombre": nombre,
       "canciones": [],
     }
     if (nombre != '')
     {
-      this.playlistService.crearPlaylist(playlist).subscribe(
+      this.playlistService.crearPlaylist(playlist, id).subscribe(
         (response: any) => {
           console.log(response);
         },
@@ -57,6 +61,7 @@ export class PlaylistComponent {
   mostrarBotones(){
     document.getElementById("eliminar")?.classList.remove("hide");
     document.getElementById("editar")?.classList.remove("hide");
+    document.getElementById("ver")?.classList.remove("hide");
   }
   eliminar(){
     const id = this.playlistService.playlistSeleccionada?.getValue()?.id;

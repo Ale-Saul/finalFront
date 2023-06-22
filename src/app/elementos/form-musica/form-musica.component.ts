@@ -29,9 +29,11 @@ export class FormMusicaComponent {
       };
       this.cancionService.agregarCancion(cancion).subscribe(
         (response) => {
+          alert('Cancion agregada con exito');
           console.log(response);
         },
         (error) => {
+          alert('Error al agregar cancion');
           console.log(error);
         }
       );

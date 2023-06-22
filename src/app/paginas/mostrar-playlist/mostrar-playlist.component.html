@@ -1,0 +1,23 @@
+<div class="container4">
+  <i (click)="toggleMenu()" class="fa-sharp fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+  <button class="regresar" (click)="regresar()"><a>Regresar</a></button>
+</div>
+<div>
+  <app-menu-lateral></app-menu-lateral>
+
+  <div class="scroll-container">
+    <div class="container1" *ngIf="playlistSeleccionada">
+      <label for="playlist-title">Nombre Playlist: </label>
+      <span>{{playlistSeleccionada.nombre}}</span>
+    </div>
+
+    <div class="container3">
+      <label for="canciones-title">Canciones Playlist:</label>
+      <app-canciones-busqueda [canciones]="playlistSeleccionada?.canciones" (eventoCancion)="mostrarBoton()"></app-canciones-busqueda>
+    </div>
+
+    <div class="container4">
+      <button id="ver" class="hide editar" [routerLink]="['/mostrarCancion']"><i class="fa-sharp fa-solid fa-eye fa-xl"></i>Ver</button>
+    </div>
+  </div>
+</div>

@@ -22,8 +22,14 @@ export class PlaylistService {
   obtenerPlaylist(){
     return this.http.get('http://localhost:3000/playlist', { headers: this.headers });
   }
-  crearPlaylist(playlist : any){
-    return this.http.post('http://localhost:3000/playlist', playlist, { headers: this.headers });
+  obtenerPlaylistUsuario(id: string){
+    return this.http.get(`http://localhost:3000/playlist/usuario/${id}`, { headers: this.headers });
+  }
+  buscarPlaylist(nombre: string){
+    return this.http.get(`http://localhost:3000/playlist/buscar/`+ nombre, { headers: this.headers });
+  }
+  crearPlaylist(playlist : any, id : string){
+    return this.http.post(`http://localhost:3000/playlist/${id}`, playlist, { headers: this.headers });
   }
   eliminarPlaylist(id: any){
     return this.http.delete(`http://localhost:3000/playlist/${id}`, { headers: this.headers });

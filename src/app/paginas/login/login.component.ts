@@ -24,7 +24,7 @@ export class LoginComponent {
       this.usuarioService.loginUsuario(usuario).subscribe(
         (response : any) => {
           console.log(response);
-          this.localStorageService.setItem('usuario', JSON.stringify(response.usuario));
+          this.localStorageService.setItem('usuario', JSON.stringify(response.user));
           this.localStorageService.setItem('token', response.token);
           window.location.href = '/inicio';
         },

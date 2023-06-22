@@ -14,4 +14,7 @@ export class UsuarioService {
   loginUsuario(usuario : any){
     return this.httpClient.post('http://localhost:3000/auth/login', usuario);
   }
+  estaLogueado(){
+    return !!localStorage.getItem('token');
+  }
 }

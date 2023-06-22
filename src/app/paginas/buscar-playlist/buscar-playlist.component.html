@@ -11,14 +11,11 @@
     <div class="scroll-container">
       <div class="block">
         <h1>Resultados</h1>
-        <app-canciones-busqueda [canciones]="resultados" (eventoCancion)="mostrarBotones()"></app-canciones-busqueda>
+        <app-tabla-playlist [playlists]="resultados" (seleccionPlaylist)="mostrarBotones()"></app-tabla-playlist>
       </div>
       <div class="container4">
-        <button id="ver" class="hide editar" [routerLink]="['/mostrarCancion']">Ver</button>
-        <button id="editar" class="hide editar" [routerLink]="['/editarcancion']">Editar</button>
+        <button id="ver" class="hide editar" [routerLink]="['/mostrarplaylist']">Ver</button>
       </div>
     </div>
   </div>
 </div>
-
-

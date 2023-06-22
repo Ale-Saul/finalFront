@@ -1,0 +1,19 @@
+<div class="divRegresar">
+  <button class="regresar" (click)="regresar()">Regresar</button>
+</div>
+<div class="form">
+    <h1>Cancion</h1>
+    <div  *ngIf="cancionSeleccionada">
+        <label>Titulo:</label>
+        <span>{{cancionSeleccionada.titulo}}</span>
+
+        <label>Artista:</label>
+        <span>{{cancionSeleccionada.artista}}</span>
+
+        <label>Género:</label>
+        <span>{{cancionSeleccionada.genero}}</span>
+
+        <label>Duración (en segundos):</label>
+        <span>{{cancionSeleccionada.duracion}}</span>
+    </div>
+</div>

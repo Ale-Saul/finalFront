@@ -21,6 +21,10 @@ import { EditarPlaylistComponent } from './paginas/editar-playlist/editar-playli
 import { CancionesListaComponent } from './elementos/canciones-lista/canciones-lista.component';
 import { CancionesPlaylistComponent } from './elementos/canciones-playlist/canciones-playlist.component';
 import { LoginComponent } from './paginas/login/login.component';
+import { CancionesBusquedaComponent } from './elementos/canciones-busqueda/canciones-busqueda.component';
+import { MostrarCancionComponent } from './paginas/mostrar-cancion/mostrar-cancion.component';
+import { MostrarPlaylistComponent } from './paginas/mostrar-playlist/mostrar-playlist.component';
+import { BuscarPlaylistComponent } from './paginas/buscar-playlist/buscar-playlist.component';
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { LoginComponent } from './paginas/login/login.component';
     EditarPlaylistComponent,
     CancionesListaComponent,
     CancionesPlaylistComponent,
-    LoginComponent
+    LoginComponent,
+    CancionesBusquedaComponent,
+    MostrarCancionComponent,
+    MostrarPlaylistComponent,
+    BuscarPlaylistComponent
   ],
   imports: [
     BrowserModule,

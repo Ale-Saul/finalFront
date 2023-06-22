@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { MenuService } from '../../service/menu.service';
-import { BuscadorService } from 'src/app/service/buscador.service';
+import { PlaylistService } from 'src/app/service/playlist.service';
+
 
 @Component({
-  selector: 'app-buscar',
-  templateUrl: './buscar.component.html',
-  styleUrls: ['./buscar.component.scss']
+  selector: 'app-buscar-playlist',
+  templateUrl: './buscar-playlist.component.html',
+  styleUrls: ['./buscar-playlist.component.scss']
 })
-export class BuscarComponent {
-
+export class BuscarPlaylistComponent {
   titulo : string = '';
   resultados : any = [];
-  constructor(private menuService: MenuService, private buscadorService: BuscadorService) { }
+  constructor(private menuService: MenuService, private playlistService : PlaylistService) { }
   buscar(){
-    this.buscadorService.buscarCanciones(this.titulo).subscribe(
+    this.playlistService.buscarPlaylist(this.titulo).subscribe(
       (data) => {
         this.resultados = data;
       },
@@ -25,7 +25,6 @@ export class BuscarComponent {
   }
   mostrarBotones(){
     document.getElementById("ver")?.classList.remove("hide");
-    document.getElementById("editar")?.classList.remove("hide");
   }
   toggleMenu() {
     this.menuService.toggleMenu();

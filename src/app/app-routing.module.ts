@@ -8,17 +8,23 @@ import { RegistroComponent } from './paginas/registro/registro.component';
 import { FormEditMusicaComponent } from './elementos/form-edit-musica/form-edit-musica.component';
 import { EditarPlaylistComponent } from './paginas/editar-playlist/editar-playlist.component';
 import { LoginComponent } from './paginas/login/login.component';
-
+import { AuthGuard } from './auth.guard';
+import { MostrarCancionComponent } from './paginas/mostrar-cancion/mostrar-cancion.component';
+import { MostrarPlaylistComponent } from './paginas/mostrar-playlist/mostrar-playlist.component';
+import { BuscarPlaylistComponent } from './paginas/buscar-playlist/buscar-playlist.component';
 
 const routes: Routes = [
-  {path: 'inicio', component: InicioComponent},
-  {path: 'buscar', component: BuscarComponent},
-  {path: 'musica', component: AgregarMusicaComponent},
-  {path: 'playlist', component: PlaylistComponent},
+  {path: 'inicio', component: InicioComponent, canActivate: [AuthGuard]},
+  {path: 'buscar', component: BuscarComponent, canActivate: [AuthGuard]},
+  {path: 'musica', component: AgregarMusicaComponent, canActivate: [AuthGuard]},
+  {path: 'playlist', component: PlaylistComponent, canActivate: [AuthGuard]},
   {path: 'registro', component: RegistroComponent},
-  {path: 'editarcancion', component: FormEditMusicaComponent},
-  {path: 'editarplaylist', component: EditarPlaylistComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'editarcancion', component: FormEditMusicaComponent, canActivate: [AuthGuard]},
+  {path: 'editarplaylist', component: EditarPlaylistComponent, canActivate: [AuthGuard]},
+  {path: 'login', component: LoginComponent},
+  {path: 'mostrarCancion', component: MostrarCancionComponent, canActivate: [AuthGuard]},
+  {path: 'mostrarplaylist', component: MostrarPlaylistComponent, canActivate: [AuthGuard]},
+  {path: 'buscarplaylist', component: BuscarPlaylistComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

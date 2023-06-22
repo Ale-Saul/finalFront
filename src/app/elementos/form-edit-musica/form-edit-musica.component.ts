@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component} from '@angular/core';
 import { Cancion } from 'src/app/models/cancion.model';
 import { CancionService } from 'src/app/service/cancion.service';
 @Component({
@@ -20,6 +20,7 @@ export class FormEditMusicaComponent {
   guardarCambios(){
     this.cancionService.guardarCambios(this.id.toString() ,this.cancionSeleccionada).subscribe(
       (response: any) => {
+        alert('Cancion editada con exito');
         console.log(response);
       },
       (error) => {
@@ -30,6 +31,7 @@ export class FormEditMusicaComponent {
   eliminarCancion(){
     this.cancionService.eliminarCancion(this.id.toString()).subscribe(
       (response: any) => {
+        alert('Cancion eliminada con exito');
         console.log(response);
       },
       (error) => {
@@ -37,5 +39,8 @@ export class FormEditMusicaComponent {
       }
     );
   }
-
+  regresar(){
+    this.cancionService.cancionSeleccionada.next(null);
+    window.history.back();
+  }
 }
